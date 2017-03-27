@@ -8,6 +8,9 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   {% include '_partials/head.swig' %}
+  {% if page.use_echarts %}
+    {% include '_scripts/third-party/post-echarts.swig' %}
+  {% endif %}
   <title>{% block title %}{% endblock %}</title>
 </head>
 
@@ -71,6 +74,10 @@
   {% include '_scripts/third-party/mathjax.swig' %}
   {% include '_scripts/third-party/lean-analytics.swig' %}
   {% include '_scripts/baidu-push.swig' %}
+  {% if page.use_echarts %}
+    {% set post_script = '_scripts/post-scripts/' + page.echart_script + '.swig' %}
+    {% include post_script %}
+  {% endif %}
   {% include '_components/algolia-search/assets.swig' %}
 
 </body>

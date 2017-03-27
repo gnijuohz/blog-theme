@@ -1,7 +1,7 @@
 // Blockquote with all children centered.
 .blockquote-center {
   position: relative;
-  margin: 40px 0;
+  margin: 50px 40px;
   padding: 0;
   border-left: none;
   text-align: center;
@@ -20,12 +20,10 @@
   &::before {
     top: -20px;
     background-image: url($center-quote-left);
-    border-top: 1px solid $grey-light;
   }
   &::after {
     bottom: -20px;
     background-image: url($center-quote-right);
-    border-bottom: 1px solid $grey-light;
     background-position: 100% 8px;
   }
 

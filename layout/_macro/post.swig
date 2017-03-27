@@ -62,12 +62,6 @@
         <div class="post-meta">
           <span class="post-time">
             {% if theme.post_meta.created_at %}
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.posted') }}</span>
-              {% endif %}
               <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">
                 {{ date(post.date, config.date_format) }}
               </time>
@@ -78,9 +72,6 @@
             {% endif %}
 
             {% if theme.post_meta.updated_at %}
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.modified') }}</span>
               {% endif %}
